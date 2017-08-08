@@ -1,0 +1,4 @@
+<% @articles.each do |article| %>
+<h2><%= link_to article.title.capitalize, article_path(article) %></h2>
+  <%= Kramdown::Document.new(article.content).to_html.html_safe %>
+<% end %>
