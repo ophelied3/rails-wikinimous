@@ -2,7 +2,16 @@
   <%= f.label "Title" %>
   <%= f.text_field :title %>
   <%= f.label "Content" %>
+  <div id="editor"></div>
   <%= f.text_area(:content, size: '50x10') %>
   <%= f.submit %>
 <% end %>
 
+<script>
+  var editor = ace.edit("editor");
+  var textarea = $('textarea[name="article[content]"]').hide();
+  editor.getSession().setValue(textarea.val());
+  editor.getSession().on('change', function(){
+    textarea.val(editor.getSession().getValue());
+  });
+</script>

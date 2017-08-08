@@ -6,6 +6,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   text-align: center;
+  margin: 0;
 }
 
 h2, a {
@@ -15,4 +16,10 @@ h2, a {
 
 a:hover {
   text-decoration: underline;
+}
+
+#editor {
+    position: absolute;
+    width: 500px;
+    height: 400px;
 }
